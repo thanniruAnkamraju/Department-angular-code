@@ -1,0 +1,19 @@
+.navbar-nav li:hover > 
+ul.dropdown-menu {
+    display: inline-block;
+}.dropdown-submenu {
+    position:relative;
+}
+*.navbar {
+
+    background-color: #08171a; 
+  }
+  
+.dropdown-submenu
+>.dropdown-menu 
+{
+         top:0;
+          /*left:-100%;*/
+       left:10rem; /*10rem is the min-width of dropdown-menu */
+      margin-top:-6px;
+    }

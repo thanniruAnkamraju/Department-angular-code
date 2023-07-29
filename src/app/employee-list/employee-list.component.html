@@ -1,0 +1,52 @@
+<h1 class="text-center">Employee List</h1>
+<div class="col-md-10 offset-md-0">
+<table class ="table table-striped">
+
+    <thead>
+
+       <tr>
+        <th>Employee Id</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Employee FirstName</th>
+        <th>Employee MiddleName</th>
+        <th>Employee LastName</th>
+        <th>Employee DateOfBirth</th>
+        <th>Employee EmailId</th>
+        <th>Employee Gender</th>
+        <th>Employee Salary</th>
+        <th>Employee Contact</th>
+        <th>Employee BloodGroup</th>
+        <th>Employee Manager</th>
+        <th>Employee DeptId</th>
+        <th>Employee DateOfJoining</th>
+       
+    
+    </thead>
+
+    <tbody>
+    
+        <tr *ngFor = "let employee of employees">
+
+        <td>{{employee.empId}}</td>
+        <td>{{employee.title}}</td>
+        <td>{{employee.status}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.middleName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.dateOfBirth}}</td>
+        <td>{{employee.emailId}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.salary}}</td>
+        <td>{{employee.contact}}</td>
+        <td>{{employee.bloodGroup}}</td>
+        <td>{{employee.manager}}</td>
+        <td>{{employee.deptId}}</td>
+        <td>{{employee.dateOfJoining}}</td>
+
+        
+        </tr>
+    </tbody>
+
+    </table>
+</div>

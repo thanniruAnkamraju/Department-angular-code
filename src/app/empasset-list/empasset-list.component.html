@@ -1,0 +1,38 @@
+<h2> EmpAsset List</h2>
+<table class ="table table-striped">
+
+    <thead>
+
+       <tr>
+        <th> SNO</th>
+        <th> IssuedBy</th>
+        <th> IssuedOn</th>
+        <th> ReturnOn</th>
+        <th> ReturnOn</th>
+        <th> ReturnBy</th>
+        <th> ApprovedBy</th>
+        <th> EmpId</th>
+        <th>LongDescription </th>
+        <th>Items </th>
+        
+        
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let empasset of empassets">
+
+        <td>{{empasset.sNo}}</td>
+        <td>{{empasset.issuedBy}}</td>
+        <td>{{empasset.issuedOn}}</td>
+        <td>{{empasset.returnOn}}</td>
+        <td>{{empasset.returnBy}}</td>
+        <td>{{empasset.approvedBy}}</td>
+        <td>{{empasset.approvedOn}}</td>
+        <td>{{empasset.empId}}</td>
+        <td>{{empasset.longDescription}}</td>
+        <td>{{empasset.items}}</td>
+       </tr>
+    </tbody>
+    </table>
+
+

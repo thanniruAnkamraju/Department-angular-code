@@ -1,0 +1,43 @@
+<h2> EamAsset List</h2>
+<table class ="table table-striped">
+
+    <thead>
+
+       <tr>
+        <th> Item</th>
+        <th> ItemType</th>
+        <th> Uom</th>
+        <th> quantity</th>
+        <th> warrantyDate</th>
+        <th> expiryDate</th>
+        <th> Description</th>
+        <th> Price</th>
+        <th>SerialNumber</th>
+        <th> ModelNumber</th>
+        <th>Status</th>
+        <th>LongDescription</th>
+        
+        
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let eamasset of eamasset">
+
+        <td>{{eamasset.item}}</td>
+        <td>{{eamasset.itemtype}}</td>
+        <td>{{eamasset.uom}}</td>
+        <td>{{eamasset.quantity}}</td>
+        <td>{{eamasset.warrantyDate}}</td>
+        <td>{{eamasset.expiryDate}}</td>
+        <td>{{eamasset.description}}</td>
+        <td>{{eamasset.price}}</td>
+        <td>{{eamasset.serialnumber}}</td>
+        <td>{{eamasset.modelnumber}}</td>
+        <td>{{eamasset.status}}</td>
+        <td>{{eamasset.longDescription}}</td>
+        
+        
+        </tr>
+    </tbody>
+    </table>
+

@@ -1,0 +1,47 @@
+<div class="col-md-8 offset-md-3"><br><br>
+
+   <h3> Create Department </h3><br>
+   
+   <form (ngSubmit)="onSubmit()">
+   
+   
+   
+   <div class="form-group">
+   
+       <label>Department Code</label>
+   
+       <input type="text" class = "form-control" id ="deptCode"
+   
+        [(ngModel)] = "department.deptCode" name="deptCode">
+   
+   </div>
+   
+   
+   
+   <div class="form-group">
+   
+       <label>Department Name</label>
+   
+       <input type="text" class = "form-control" id ="deptName"
+   
+        [(ngModel)] = "department.deptName" name="deptName">
+   
+   </div>
+   
+   
+   
+   <div class="form-group">
+   
+       <label>Description</label>
+   
+       <input type="text" class = "form-control" id ="description"
+   
+        [(ngModel)] = "department.description" name="description">
+   
+   </div>
+   
+   
+   <button class="btn btn-success" type="submit"style="background-color:green">submit</button>&nbsp;
+   <button (click)="goToDepartmentList()" class="btn btn-cancel" class="btn btn-danger" type ="cancel">cancel</button>
+   </form>
+   </div>

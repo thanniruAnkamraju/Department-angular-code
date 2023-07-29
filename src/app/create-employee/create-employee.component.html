@@ -1,0 +1,205 @@
+<h2 class="text-center">Create-Employee</h2>
+<div class="col-md-8 offset-md-2">
+   
+    <form (ngSubmit) ="onSubmit()">
+            <div class="form-group row">
+            <div class="col-sm-2">
+            <label> Mr/Ms </label>
+            <select class ="form-control" id="title"
+            [(ngModel)] = "employee.title" name = "title" >
+            <option value="Mr">Mr</option>
+            <option value="Ms">Ms</option>
+            </select>
+          </div>
+          <div class="col-sm-6">
+            <label for="name">DisplayName</label>
+            <input type="text"
+            class="form-control" id="displayName" required [(ngModel)]="employee.displayName"
+    
+            name="displayName">
+          </div>
+          <div class="col-sm-4">
+            <label for="status">Status</label>
+             <select class="form-control" id="status" [(ngModel)] = "employee.status" name ="status">
+             <option value="active">Active</option>
+             <option value="inactive">Inactive</option>
+             <option value="pending">Pending</option>
+          </select>
+         </div>
+</div>
+         <div class="form-group row">
+            <div class="col-sm-4">
+              <label class="control-label"> FirstName<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+        <input type="text" class="form-control" id="firstName"  required (keyup)="getDipName()"
+        [(ngModel)] = "employee.firstName" name = "firstName" placeholder=" first name">
+      </div>
+       <div class="col-sm-4">
+        <label> MiddleName</label>
+        <input type="text" class="form-control" id="middleName" required (keyup)="getDipName()"
+        [(ngModel)] = "employee.middleName" name = "middleName" placeholder="middle name">
+       </div> 
+       
+       <div class="col-sm-4">
+        <label> LastName<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+        <input type="text" class="form-control" id="lastName" required (keyup)="getDipName()" 
+        [(ngModel)] = "employee.lastName" name = "lastName" placeholder="last name">
+       </div> 
+       </div>
+        
+        <div class="form-group row">
+            <div class="col-sm-4">
+        <label>  Date Of Birth</label><br>
+        <input type="Date" class="form-control" name="dateofbirth"   [(ngModel)] = "employee.dateOfBirth">
+       </div> 
+       <div class="col-sm-4">
+        <label>Email Id</label>
+        <input type="text" class="form-control" id="emailId"
+        [(ngModel)] = "employee.emailId" name = "emailId" placeholder="it should contain @..">
+       </div> 
+       <div class="col-sm-4">
+        <label>Gender</label><br>
+        <input type="radio" name="male" name="gender" value="male" [(ngModel)] = "employee.gender">Male
+        <input type="radio" name="female" name="gender" value="female" [(ngModel)] = "employee.gender">Female
+        <input type="radio" name="other" name="gender" value="other" [(ngModel)] = "employee.gender"/>other
+    </div>
+       </div> 
+       <div class="form-group row">
+        <div class="col-sm-4">
+        <label>Salary</label>
+        <input type="text" class="form-control" id="salary"
+        [(ngModel)] = "employee.salary" name = "salary">
+       </div> 
+
+      
+      
+       <div class="col-sm-4">
+        <label>Contact Number</label>
+        <input type="text" class="form-control" id="contact"
+        [(ngModel)] = "employee.contact" name = "contact" placeholder="Only 10 digits allowed">
+       </div> 
+
+       <div class="col-sm-4">
+        <label>BloodGroup</label>
+        <select class="form-control" id="bloodGroup"
+        [(ngModel)] = "employee.bloodGroup" name = "bloodGroup" >
+        <option value="o+">O+</option>
+        <option value="o-">O-</option>
+        <option value="a-">A-</option>
+        <option value="a+">A+</option>
+        <option value="b">B+</option>
+        <option value="b-">B-</option>
+        <option value="ab+">AB+</option>
+        <option value="ab-">AB-</option>
+       </select>
+         </div> 
+           </div>
+
+       <div class="form-group row">
+        <div class="col-sm-4">
+        <label>Manager</label>
+        <input type="text" class="form-control" id="manager"
+        [(ngModel)] = "employee.manager" name = "manager">
+       </div> 
+
+       <div class="col-sm-4">
+        <label>Department<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+        <select class="form-control" name="department" id="deptId"[(ngModel)] = "employee.deptId"> 
+          <option *ngFor="let dept of department" [value]="dept.deptId">{{dept.deptName}}</option>
+        </select>
+
+        </div> 
+       <div class="col-sm-4">
+        <label>Date Of Joining<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label><br>
+        <input type="Date" class="form-control" name="dateofjoining" 
+        [(ngModel)] = "employee.dateOfJoining" >
+        
+       </div> 
+        </div>
+       <h4 class="address-heading" Address style="background-color:rgb(0, 45, 128);"><pre style="color:rgb(252, 248, 251);" >{{ address | json }}</pre></h4>
+           <div class="form-group row">
+            <div class="col-sm-4">
+             <label>Address1<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+            <input type="text" class = "form-control" id ="address1"
+             [(ngModel)] = "address.address1" name="address1">
+             </div>
+
+        <div class="col-sm-4">
+        <label>Address2</label>
+        <input type="text" class = "form-control" id ="address2"
+         [(ngModel)] = "address.address2" name="address2">
+         </div>
+  
+        <div class="col-sm-4">
+        <label>City<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+         <input type="text" class = "form-control" id ="city"
+          [(ngModel)] = "address.city" name="city">
+        </div>
+         </div>
+
+    <div class="form-group row">
+        <div class="col-sm-4">
+        <label>State</label>
+        <input type="text" class = "form-control" id ="state"
+       [(ngModel)] = "address.state" name="state">
+       </div>
+
+      <div class="col-sm-4">
+        <label>Country</label>
+        <input type="text" class = "form-control" id ="country"
+     [(ngModel)] = "address.country" name="country">
+       </div>
+    
+       <div class="col-sm-4">
+        <label>PinCode<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+        <input type="text" class = "form-control" id ="pincode"
+          [(ngModel)] = "address.pincode" name="pincode">
+      </div>
+       </div>
+
+    <h4 class="qualification-heading" qualification style="background-color:rgb(0, 45, 128);"><pre style="color:rgb(252, 248, 251);" >{{ qualification | json }}</pre></h4>
+    <div class="form-group row">
+        <div class="col-sm-4">
+             <label>Highest Qualification<span style="color: red;font-weight:rgb(184, 32, 32)">*</span></label>
+            <select class = "form-control" id ="highestQualification"
+             [(ngModel)] = "qualification.highestQualification" name="highestQualification">
+           <option class="b.tech">B.tech</option>
+           <option class="m.tech">M.tech</option>
+           <option class="mca">MCA</option>
+           </select>
+         </div>
+         
+            <div class="col-sm-4">
+                 <label class="required">Course</label>
+                <select class = "form-control" name ="course" 
+                [(ngModel)] = "qualification.course" name="course">
+                <option value="cse">CSE</option>
+                  <option value="ece">ECE</option>
+                    <option value="mech">MECH</option>
+                     <option value="civil">CIVIL</option>
+                       <option value="it">IT</option>
+                       </select> 
+                     </div>
+                       </div>
+
+           <div class="form-group row">
+            <div class="col-sm-4">
+                 <label>Percentage</label>
+                <input type="text" class = "form-control" id ="percentage" [(ngModel)] = "qualification.percentage" name="percentage">
+                 </div>
+            
+                  <div class="col-sm-4">
+                     <label>PassedOut</label>
+                    <input type="text" class = "form-control" id ="passingYear" [(ngModel)] = "qualification.passingYear" name="passingYear">
+                     </div>
+                       </div>
+                       
+       <button  (click)="saveEmployee"class="btn btn-success" type="submit" style="background-color:green">Submit</button>&nbsp;
+       
+       <button (click)="goToEmployeeList()" class="btn btn-cancel" class="btn btn-danger" type ="cancel" style="background-color:rgb(0, 45, 128)">Cancel</button> -->
+</form>
+</div>
+
+
+
+
+
